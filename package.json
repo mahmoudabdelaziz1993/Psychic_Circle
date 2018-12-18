@@ -1,0 +1,15 @@
+{
+  "name": "psychic_circle",
+  "version": "1.0.0",
+  "description": "\u0016\u0016\u0016psychic circle by chating in rooms",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon app.js"
+  },
+  "author": "MahmoudAbdelaziz",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
