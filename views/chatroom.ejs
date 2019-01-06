@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>intouch - Topic Goes Here</title>
+		<link rel="stylesheet" href="./css/chatroomStyles.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="titlePanel">
+				<h1>intouch | Topic Goes Here</h1>
+			</div>
+			<div class="controls">
+				<div class="userPicHolder"><img src="<%=user.image%>" onerror="this.src='/images/user.jpg'" alt="<%=user.username%>"></div>
+				<p class="userName"><%=user.username%></p>
+				<a href="/auth/logout" id="logOutBtn">Logout</a>
+			</div>
+			<div class="chatListDiv">
+				<div class="chatMessagesPanel">
+					<div class="chatMessages">
+						<!-- Loop this for chat messages -->
+						<div class="chatBlock">
+							<div class="userPic"><img src="/images/user.jpg"></div>
+							<div class="chatMsg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti perferendis eius aut nesciunt necessitatibus ad nulla, qui sequi, id nam. Possimus odit aut nisi veritatis amet distinctio id officiis ipsam!</div>
+						</div>
+						<!-- loop end -->
+					</div>
+					<div class="typePanel">
+						<input type="text" name="userInput" placeholder="Type here and press enter">
+						<a href="#" id="uploadFile" class="fileUploadBtn">Photo</a>
+					</div>
+				</div>
+				<div class="chatUsers">
+					<!-- Loop this for chat users -->
+					<div class="userBlock">
+						<div class="userPic"><img src="/images/user.jpg" alt="John Doe"></div>
+						<div class="cuserName">John Doe</div>
+					</div>
+					<!-- loop end -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

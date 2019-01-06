@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Audiowide');
+ul {
+    text-align:center;
+    padding-top:20px;
+    height:60px;
+    width:100%;
+}
+
+ul li {
+    
+    display:inline;
+    padding-right:15px;
+    float:left;
+}
+
+ul div {
+    font-family: 'Audiowide', cursive;
+    padding:0;
+    margin:0;
+    float:right;
+}
+
+
+
+ul li a {
+    text-decoration:none;
+    color:black;
+}
+
+ul li a:hover {
+    color:#00c3ff;
+    text-decoration:none;
+}
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 1px;
+  font-size: 14px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+
+
+ul {
+    border-bottom:#444444 1px solid;
+
+}
+
+body {
+    margin-left:200px;
+    margin-right:200px;
+    
+}
+
+.head {
+    margin-bottom:25px;
+}
+
+.foot {
+    border-top:dotted 1px black;
+    text-align:center;
+}
+
+.profile-pic {
+    border-radius:50%;
+}
+
+.profiles {
+    margin-top:25px;
+    margin-bottom:35px;
+}
+
+.maincolor {
+    margin-top:40px;
+    border-radius:3px;
+    background-color:#f4f4f4;
+    height:auto;
+    text-align:center;
+}
+
+.main {
+    margin-top:40px;
+    border-radius:3px;
+    height:auto;
+    text-align:center;
+}
+
+.content {
+   padding:20px;
+}

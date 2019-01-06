@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Psychic|Circle - Rooms</title>
+		<link rel="stylesheet" href="./css/roomsStyles.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="titlePanel">
+				<h1>Psychic|Circle  Select or Create a Chatroom</h1>
+			</div>
+			<div class="controls">
+				<div class="userPicHolder"><img src="<%=user.image%>" onerror="this.src='/images/user.jpg'" alt="<%=user.username%>"></div>
+				<p class="userName"><%=user.username%></p>
+				<a href="/auth/logout" id="logOutBtn">Logout</a>
+			</div>
+			<form id="createroom-form">
+				<div class="controls">
+					<input id="create-room" type="text" name="roomName" placeholder="Create a new Chatroom" required minlength="2">
+					<a  href="javascript:$('#createroom-form').submit();" id="createBtn">Create</a>
+				</div>
+			</form>
+			
+			
+			<div class="roomsListDiv">
+				<ul class="roomsList" id="roomsListUL">
+					<!-- Loop list items here -->
+					<!-- Loop ends -->
+				</ul>
+			</div>
+		</div>
+		<script id="room-template" type="text/template">
+			<a href="chatroom?room={{id}}"><li id="xx">{{name}}</li></a>
+		</script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="/js/libs/jquery-3.1.0.min.js"></script>
+		<script src="/js/libs/mustache.js"></script>
+		<script src="/js/index.js"></script>
+	</body>
+</html>
