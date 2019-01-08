@@ -29,6 +29,19 @@ class Room {
     	return this.rooms.filter((room)=>room.name==name)[0];
     };
 
+    getRoomByID(id){
+        // fetch the first room which name equal the name
+        var exist = this.rooms.filter((room)=>room.id==id)[0];
+        if (exist) {
+            return true;
+        }else{
+            return false;
+        }
+
+
+    };
+
+
 
 
 

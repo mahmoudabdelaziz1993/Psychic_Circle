@@ -9,12 +9,19 @@
 	right:0;
 	margin:auto;
 }
-
+ 
 .titlePanel {
 	position: relative;
 	width: 960px;
 	height: 50px;
 	background-color: rgb(0,0,0);
+}
+ 
+.roomsList {
+	margin:0px;
+	padding:0px;
+	list-style:none;
+	font-family: sans-serif;
 }
 
 .titlePanel > h1 {
@@ -240,6 +247,19 @@ input[name='userInput'] {
     padding: 10px;
     font-family: sans-serif;
     text-decoration: none;
+}
+#leaveBTN{
+	position: absolute;
+    background-color: rgb(226, 98, 92);
+    padding: 17px;
+    left: 690px;
+    top: 10px;
+    width: 90px;
+    color: #FFF;
+    font-family: sans-serif;
+    text-decoration: none;
+    text-align: center;
+    outline: none;
 }
 
 /*.fileUploadBtn::-webkit-file-upload-button {

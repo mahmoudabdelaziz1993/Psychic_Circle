@@ -14,13 +14,14 @@
 				<div class="userPicHolder"><img src="<%=user.image%>" onerror="this.src='/images/user.jpg'" alt="<%=user.username%>"></div>
 				<p class="userName"><%=user.username%></p>
 				<a href="/auth/logout" id="logOutBtn">Logout</a>
+				<a href="/profile" id="leaveBTN">leave</a>
 			</div>
 			<div class="chatListDiv">
 				<div class="chatMessagesPanel">
 					<div class="chatMessages">
 						<!-- Loop this for chat messages -->
 						<div class="chatBlock">
-							<div class="userPic"><img src="/images/user.jpg"></div>
+							<div class="userPic"><img src="/images/user.jpg" alt="<%=user.username%>"></div>
 							<div class="chatMsg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti perferendis eius aut nesciunt necessitatibus ad nulla, qui sequi, id nam. Possimus odit aut nisi veritatis amet distinctio id officiis ipsam!</div>
 						</div>
 						<!-- loop end -->
@@ -32,13 +33,29 @@
 				</div>
 				<div class="chatUsers">
 					<!-- Loop this for chat users -->
-					<div class="userBlock">
+					<ul id="usersph" class="roomsList">
+				<!--	<div class="userBlock">
 						<div class="userPic"><img src="/images/user.jpg" alt="John Doe"></div>
 						<div class="cuserName">John Doe</div>
-					</div>
+					</div> -->
+					</ul>
 					<!-- loop end -->
-				</div>
+				</div> 
 			</div>
 		</div>
+		<script id="active-template" type="text/template">
+			<li>
+			<div class="userBlock">
+				<div class="userPic"><img src="{{image}}" onerror="this.src='/images/user.jpg'" alt="{{name}}"></div>
+		        <div class="cuserName">{{name}}</div>
+			</div>
+			</li>
+			
+		</script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="/js/libs/jquery-3.1.0.min.js"></script>
+		<script src="/js/libs/mustache.js"></script>
+		<script src="/js/libs/deparam.js"></script>
+		<script src="/js/chat.js"></script>
 	</body>
 </html>
