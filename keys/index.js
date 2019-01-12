@@ -1,7 +1,7 @@
 module.exports = {
     google: {
-        clientID: "1259843080838215",
-        clientSecret: "06db3aa4fb04f3995cd022c928db8e0c",
+        clientID: "",
+        clientSecret: "",
         callbackURL: "/auth/facebook/callback"
     },
     mongo: {
@@ -11,8 +11,8 @@ module.exports = {
         secret: "asdkjashdkjhnsam,dbnmsahdkjshakfjhasdi;jflkdsajglkfkldsajglk"
     },
     facebook: {
-        clientID: "",
-        clientSecret: "",
-        callbackURL: ""
+        clientID: "1259843080838215",
+        clientSecret: "06db3aa4fb04f3995cd022c928db8e0c",
+        callbackURL: "/auth/facebook/callback"
     }
 };
