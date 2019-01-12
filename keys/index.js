@@ -13,6 +13,6 @@ module.exports = {
     facebook: {
         clientID: "1259843080838215",
         clientSecret: "06db3aa4fb04f3995cd022c928db8e0c",
-        callbackURL: "/auth/facebook/callback"
+        callbackURL: "https://thawing-sierra-46086.herokuapp.com/auth/facebook/callback"
     }
 };
