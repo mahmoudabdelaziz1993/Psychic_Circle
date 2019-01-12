@@ -134,4 +134,8 @@ input[name='roomName'] {
 #logOutBtn:hover {
 	background-color: rgb(232, 48, 39);
 }
-
+.foot {
+    border-top:dotted 1px black;
+    text-align:center;
+    font-size: x-small;
+}

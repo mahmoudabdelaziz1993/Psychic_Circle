@@ -8,7 +8,7 @@
 	<body>
 		<div class="container">
 			<div class="titlePanel">
-				<h1>intouch | Topic Goes Here</h1>
+				<h1>circle</h1>
 			</div>
 			<div class="controls">
 				<div class="userPicHolder"><img src="<%=user.image%>" onerror="this.src='/images/user.jpg'" alt="<%=user.username%>"></div>
@@ -16,41 +16,97 @@
 				<a href="/auth/logout" id="logOutBtn">Logout</a>
 				<a href="/profile" id="leaveBTN">leave</a>
 			</div>
+			<input type="hidden" id="active-cl"  value="<%=user._id%>">
 			<div class="chatListDiv">
 				<div class="chatMessagesPanel">
 					<div class="chatMessages">
 						<!-- Loop this for chat messages -->
-						<div class="chatBlock">
-							<div class="userPic"><img src="/images/user.jpg" alt="<%=user.username%>"></div>
-							<div class="chatMsg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti perferendis eius aut nesciunt necessitatibus ad nulla, qui sequi, id nam. Possimus odit aut nisi veritatis amet distinctio id officiis ipsam!</div>
-						</div>
+						<!--<div class="chatBlock">
+										<div class="userPic"><img src="/images/user.jpg" alt="<%=user.username%>"></div>
+										<div class="chatMsg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti perferendis eius aut nesciunt necessitatibus ad nulla, qui sequi, id nam. Possimus odit aut nisi veritatis amet distinctio id officiis ipsam!</div>
+						</div>-->
+						<ul class="messages">
+							<!-- <li class="message left appeared">
+								<div class="avatar"></div>
+								<div class="text_wrapper">
+									<div class="text">Hello Philip! :)</div>
+								</div>
+							</li>
+							<li class="message right appeared">
+								<div class="avatar"><img class="avatar" src="{{image}}" onerror="this.src='/images/user.jpg'" alt="{{name}}"></div>
+								<div class="text_wrapper">
+									<div class="text">Hi Sandy! How are you?</div>
+								</div>
+							</li>
+							<li class="message left appeared">
+								<div class="avatar">
+									<img class="avatar" src="{{image}}" onerror="this.src='/images/user.jpg'" alt="{{name}}">
+								</div>
+								<div class="text_wrapper">
+									<div class="text">I'm fine, thank you!</div>
+								</div>
+							</li> -->
+						</ul>
+						
+						
 						<!-- loop end -->
 					</div>
-					<div class="typePanel">
-						<input type="text" name="userInput" placeholder="Type here and press enter">
-						<a href="#" id="uploadFile" class="fileUploadBtn">Photo</a>
-					</div>
+					<!-- <div class="typePanel">
+									<input type="text" name="userInput" placeholder="Type here and press enter">
+									<a href="#" id="uploadFile" class="fileUploadBtn">Photo</a>
+					</div> -->
+					<form id="message-form">
+						<div class="bottom_wrapper clearfix">
+							<div class="message_input_wrapper">
+								<input class="message_input" placeholder="Type your message here..." name="message" />
+							</div>
+							<div class="send_message">
+								<div class="icon"></div>
+								<div class="text">Send</div>
+							</div>
+						</div>
+					</form>
+					
 				</div>
 				<div class="chatUsers">
 					<!-- Loop this for chat users -->
 					<ul id="usersph" class="roomsList">
-				<!--	<div class="userBlock">
-						<div class="userPic"><img src="/images/user.jpg" alt="John Doe"></div>
-						<div class="cuserName">John Doe</div>
-					</div> -->
+						<!--	<div class="userBlock">
+								<div class="userPic"><img src="/images/user.jpg" alt="John Doe"></div>
+								<div class="cuserName">John Doe</div>
+						</div> -->
 					</ul>
 					<!-- loop end -->
-				</div> 
+				</div>
 			</div>
 		</div>
-		<script id="active-template" type="text/template">
-			<li>
-			<div class="userBlock">
-				<div class="userPic"><img src="{{image}}" onerror="this.src='/images/user.jpg'" alt="{{name}}"></div>
-		        <div class="cuserName">{{name}}</div>
-			</div>
+		 <div class="foot"> <p style="text-align:center">
+                <h2>© MahmoudAbdelaziz 2018.</h2>
+                <!--Facebook icon-->
+                <a href="https://twitter.com/mhmod_abdelaziz" target="_blank"><img alt="" src="https://s3.amazonaws.com/flashissue/ueBIjxRoTBuYR6XWW1iO_v3qVW5nRUq5VZF9RQXi2_twitter.png" /> </a>&nbsp; &nbsp; &nbsp;
+                <!--Google+ icon-->
+                <a href="https://plus.google.com/u/0/102301396727943133615" target="_blank"><img alt="" src="https://s3.amazonaws.com/flashissue/gHd2XoyiQbKBqljm7bzg_63j3xtd7SX28TTMeOSfZ_google.png" /> </a>&nbsp; &nbsp;&nbsp;
+                <!--Twitter icon-->
+                <a href="https://www.facebook.com/mhmoudabdelazizz" target="_blank"><img alt="" src="https://s3.amazonaws.com/flashissue/MsIJsIsDT9WLAxxH4aIK_OgdHV3vxSR2737LGd8cq_facebook.png" /> </a>&nbsp; &nbsp;&nbsp;
+                
+            </p></div>
+		<script id="right-template" type="text/template">
+			<li class="message right appeared">
+				<div class="avatar"><img class="avatar" src="{{image}}" onerror="this.src='/images/user.jpg'" alt="{{name}}"></div>
+				<div class="text_wrapper">
+				   <div class="text">{{body}}</div>
+				</div>
 			</li>
-			
+		</script>
+		<script id="left-template" type="text/template">
+			<li class="message left appeared">
+				<div class="avatar">
+					<img class="avatar" src="{{image}}" onerror="this.src='/images/user.jpg'" alt="{{name}}">
+				</div>
+				<div class="text_wrapper">
+					<div class="text">{{body}}</div>
+				</div>
+		    </li>
 		</script>
 		<script src="/socket.io/socket.io.js"></script>
 		<script src="/js/libs/jquery-3.1.0.min.js"></script>

@@ -36,7 +36,7 @@ socket.on('newRoom', function(msg) {
             name: msg[i].name,
             id: msg[i].id
         });
-        jQuery('#roomsListUL').append(html);
+        jQuery('#roomsListUL').prepend(html);
     };
 
 });

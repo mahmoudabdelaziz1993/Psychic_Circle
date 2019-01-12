@@ -93,6 +93,7 @@ body {
 .foot {
     border-top:dotted 1px black;
     text-align:center;
+    font-size: x-small;
 }
 
 .profile-pic {
@@ -121,4 +122,9 @@ body {
 
 .content {
    padding:20px;
+}
+.foot {
+    //border-top:dotted 1px black;
+    text-align:center;
+    font-size: x-small;
 }

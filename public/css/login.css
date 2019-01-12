@@ -121,3 +121,8 @@
   background-color: #466b99;
   border-color: #3b5a7c;
 }
+.foot {
+    //border-top:dotted 1px black;
+    text-align:center;
+    font-size: x-small;
+}

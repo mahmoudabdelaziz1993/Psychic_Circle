@@ -20,6 +20,13 @@ router.get('/chatroom', authorized, function(req, res, next) {
 });
 
 
+router.get('/chat', authorized, function(req, res, next) {
+    res.render('chat', {
+        user: req.user
+    });
+});
+
+
 module.exports = router;
 
 function authorized(req, res, next) {

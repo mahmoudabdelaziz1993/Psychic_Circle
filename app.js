@@ -123,15 +123,44 @@ io.of('/chatroom').on('connection', function(socket) {
                 console.log(Active.getUserList(params.room));
                 io.of('/chatroom').to(params.room).emit('activeUpdate', Active.getUserList(params.room));
 
+
+                //--------- emit welcome message from admin to single user 
+                socket.emit('newMessage', {
+                    from: 'admin',
+                    image: '/images/1150341_658807634221691_5719647891456350915_n.jpg',
+                    body: `welcome ${doc.username} in ${params.room} room`
+                });
+                //------- emit alert message that a new user connected
+                socket.broadcast.emit('newMessage', {
+                    from: 'admin',
+                    image: '/images/1150341_658807634221691_5719647891456350915_n.jpg',
+                    room: params.room,
+                    body: `${doc.username} has joined`
+                });
+                //---------------------messages 
+                socket.on('newMessage', function(msg, callback) {
+                    console.log(msg);
+                    io.of('/chatroom').to(params.room).emit('newMessage', {
+                        from: doc._id,
+                        room: params.room,
+                        body: msg.body,
+                        image: doc.image||null,
+                        name: doc.username
+                    });
+                    callback();
+                })
+
+
+
             }
             callback();
         });
     });
     socket.on('disconnect', function() {
         var userid = socket.request.session.passport.user;
-        
+
         var params = Active.removeUser(userid);
-        console.log(params.username + "  has disconnect from the room ")
+        //console.log(params.username + "  has disconnect from the room ")
         console.log(Active.getUserList(params.room_id));
         io.of('/chatroom').to(params.room_id).emit('activeUpdate', Active.getUserList(params.room_id));
     });

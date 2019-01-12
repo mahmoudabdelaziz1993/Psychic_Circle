@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="./css/chat.css">
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+		<title></title>
+	</head>
+	<body>
+		<div class="chat_window">
+			<div class="top_menu">
+				<div class="buttons">
+					<div class="button close"></div>
+					<div class="button minimize"></div>
+					<div class="button maximize" id="sidebarCollapse"></div>
+				</div>
+				<div class="title">Chat</div>
+			</div>
+			<ul class="messages">
+				<li class="message left appeared">
+					<div class="avatar"></div>
+					<div class="text_wrapper">
+						<div class="text">Hello Philip! :)</div>
+					</div>
+				</li>
+				<li class="message right appeared">
+					<div class="avatar"></div>
+					<div class="text_wrapper">
+						<div class="text">Hi Sandy! How are you?</div>
+					</div>
+				</li>
+				
+				
+			</ul>
+			<div class="bottom_wrapper clearfix">
+				<div class="message_input_wrapper">
+					<input class="message_input" placeholder="Type your message here..." />
+				</div>
+				<div class="send_message">
+					<div class="icon"></div>
+					<div class="text">Send</div>
+				</div>
+			</div>
+		</div>
+		<div class="message_template">
+			<li class="message"><div class="avatar"></div>
+			<div class="text_wrapper">
+				<div class="text">
+					
+				</div>
+			</div>
+		</li>
+	</div>
+	<div class="wrapper">
+					<!-- Sidebar -->
+					<nav id="sidebar">
+						<div class="sidebar-header">
+							<h3>Bootstrap Sidebar</h3>
+						</div>
+						<ul class="list-unstyled components">
+							<li class="active">
+								<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+							</li>
+							<li>
+								<div class="userBlock">
+								<div class="userPic"><img src="/images/user.jpg" alt="John Doe"></div>
+								<div class="cuserName">John Doe</div>
+							</li>
+						</ul>
+					</nav>
+				</div>
+	<!-- sidebar -->
+	<script type="text/javascript">
+		$(document).ready(function () {
+	$('#sidebarCollapse').on('click', function () {
+	$('#sidebar').toggleClass('active');
+	});
+	});
+	</script>
+	
+</body>
+</html>
