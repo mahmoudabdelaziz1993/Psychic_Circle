@@ -49,32 +49,32 @@ passport.deserializeUser(function(id, done) {
 //     }
 // ));
 // //--------------------------------------------------configure facebook strategy -----------------------------------
-// passport.use(new FacebookStrategy({
-//     clientID: keys.facebook.clientID,
-//     clientSecret: keys.facebook.clientSecret,
-//     callbackURL: keys.facebook.callbackURL
-//   },
-//   function(accessToken, refreshToken, profile, done) {
-//   	console.log(profile);
-//   	User.findOne({social_id: profile.id}).then((user)=>{
-//   		if(user){
-//   			console.log('a;ready a user');
-//   			done(null,user);
-//   		}else{
-//   		var user =new User({
-//         username: profile.displayName,
-//         social_id: profile.id,
-//         //image: profile.photos[0].value || null,
-//         gender:profile.gender
-//         });
-//   	    user.save().then((user)=>{
-//       	   console.log(user);
-//       	   done(null,user);
-//         });	
-//   		}
-//   	});
-//   }
-// ));
+passport.use(new FacebookStrategy({
+    clientID: keys.facebook.clientID,
+    clientSecret: keys.facebook.clientSecret,
+    callbackURL: keys.facebook.callbackURL
+  },
+  function(accessToken, refreshToken, profile, done) {
+  	console.log(profile);
+  	User.findOne({social_id: profile.id}).then((user)=>{
+  		if(user){
+  			console.log('a;ready a user');
+  			done(null,user);
+  		}else{
+  		var user =new User({
+        username: profile.displayName,
+        social_id: profile.id,
+        //image: profile.photos[0].value || null,
+        gender:profile.gender
+        });
+  	    user.save().then((user)=>{
+      	   console.log(user);
+      	   done(null,user);
+        });	
+  		}
+  	});
+  }
+));
 //---------------------------------------------------- configure local strategy ------------------------
 passport.use('local.signup', new LocalStrategy({
         usernameField: 'email',
