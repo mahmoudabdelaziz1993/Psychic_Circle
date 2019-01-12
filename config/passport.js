@@ -52,7 +52,8 @@ passport.deserializeUser(function(id, done) {
 passport.use(new FacebookStrategy({
     clientID: keys.facebook.clientID,
     clientSecret: keys.facebook.clientSecret,
-    callbackURL: keys.facebook.callbackURL
+    callbackURL: keys.facebook.callbackURL,
+    enableProof: true
   },
   function(accessToken, refreshToken, profile, done) {
   	console.log(profile);
