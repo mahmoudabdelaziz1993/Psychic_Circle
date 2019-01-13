@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
 router.get('/google', passport.authenticate('google', {
     scope: ['profile']
 }));
-router.get('/google/vv', passport.authenticate('google'), function(req, res) {
+router.get('/google/callback', passport.authenticate('google'), function(req, res) {
     // Successful authentication, redirect home.
     res.redirect('/profile');
 });

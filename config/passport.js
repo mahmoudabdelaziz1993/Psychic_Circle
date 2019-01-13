@@ -21,33 +21,33 @@ passport.deserializeUser(function(id, done) {
     });
 });
 //---------------------------------------------- configure google+ strategy -------------------------
-// passport.use(new GoogleStrategy({
-//     clientID:keys.google.clientID,
-//     clientSecret: keys.google.clientSecret,
-//     callbackURL: keys.google.callbackURL
-//   },
-//   function(accessToken, refreshToken, profile, done) {
-//   	console.log(profile);
-//   	User.findOne({social_id: profile.id}).then((user)=>{
-//   		if(user){
-//   			console.log('a;ready a user');
-//   			done(null,user);
-//   		}else{
-//   		var user =new User({
-//         username: profile.displayName,
-//         social_id: profile.id,
-//         image: profile.photos[0].value || null,
-//         gender:profile.gender
-//         });
-//   	    user.save().then((user)=>{
-//       	   console.log(user);
-//       	   done(null,user);
-//         });	
-//   		}
-//   	});
+passport.use(new GoogleStrategy({
+    clientID:keys.google.clientID,
+    clientSecret: keys.google.clientSecret,
+    callbackURL: keys.google.callbackURL
+  },
+  function(accessToken, refreshToken, profile, done) {
+  	console.log(profile);
+  	User.findOne({social_id: profile.id}).then((user)=>{
+  		if(user){
+  			console.log('a;ready a user');
+  			done(null,user);
+  		}else{
+  		var user =new User({
+        username: profile.displayName,
+        social_id: profile.id,
+        image: profile.photos[0].value || null,
+        gender:profile.gender
+        });
+  	    user.save().then((user)=>{
+      	   console.log(user);
+      	   done(null,user);
+        });	
+  		}
+  	});
 
-//     }
-// ));
+    }
+));
 // //--------------------------------------------------configure facebook strategy -----------------------------------
 passport.use(new FacebookStrategy({
     clientID: keys.facebook.clientID,
