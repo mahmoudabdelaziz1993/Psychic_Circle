@@ -128,7 +128,7 @@ io.of('/chatroom').on('connection', function(socket) {
                 socket.emit('newMessage', {
                     from: 'admin',
                     image: '/images/1150341_658807634221691_5719647891456350915_n.jpg',
-                    body: `welcome ${doc.username} in ${params.room} room`
+                    body: `welcome ${doc.username} you have joined the chat `
                 });
                 //------- emit alert message that a new user connected
                 socket.broadcast.emit('newMessage', {
@@ -144,7 +144,7 @@ io.of('/chatroom').on('connection', function(socket) {
                         from: doc._id,
                         room: params.room,
                         body: msg.body,
-                        image: doc.image||null,
+                        image: doc.image || null,
                         name: doc.username
                     });
                     callback();
@@ -155,14 +155,20 @@ io.of('/chatroom').on('connection', function(socket) {
             }
             callback();
         });
-    });
-    socket.on('disconnect', function() {
-        var userid = socket.request.session.passport.user;
 
-        var params = Active.removeUser(userid);
-        //console.log(params.username + "  has disconnect from the room ")
-        console.log(Active.getUserList(params.room_id));
-        io.of('/chatroom').to(params.room_id).emit('activeUpdate', Active.getUserList(params.room_id));
+        socket.on('disconnect', function() {
+            var userid = socket.request.session.passport.user;
+
+            var params = Active.removeUser(userid);
+            // console.log(params.username + "  has disconnect from the room ")
+            // console.log(Active.getUserList(params.room_id));
+             socket.broadcast.emit('newMessage', {
+                    from: 'admin',
+                    image: '/images/1150341_658807634221691_5719647891456350915_n.jpg',
+                    body: `${params.username} has left the room `
+                });
+            io.of('/chatroom').to(params.room_id).emit('activeUpdate', Active.getUserList(params.room_id));
+        });
     });
 });
 
