@@ -1,45 +1,47 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Circle | login</title>
-		<link rel='stylesheet' href='/css/login.css' />
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	</head>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Circle | login</title>
+	<link rel='stylesheet' href='/css/login.css' />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
 </head>
+
 <body>
-	<div class="container">
-		
-		<script id="metamorph-1-start" type="text/x-placeholder"></script><script id="metamorph-21-start" type="text/x-placeholder"></script>
-		<div class="container text-center">
-			<form class="form-signin" data-ember-action="2" method="post" action="/auth/signin">
-				<h2 class="form-signin-heading">Sign in</h2>
-				<small class="text-muted">Connect [your service] with your favorite social network</small>
-				<br><br>
-				
-				<a href="/auth/facebook" class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Sign in with <b>Facebook</b></a>
-				<a href="/auth/google" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Sign in with <b>Google</b></a>
-				<br><br>
-				<small class="text-muted">Or sign in with [your service]</small>
-				<br><br>
-				
-				<input id="ember360" name="email" class="ember-view ember-text-field form-control login-input" placeholder="Email Address" type="text" autofocus>
-				<input id="ember361" class="ember-view ember-text-field form-control login-input-pass" placeholder="Password" name="password" type="password" autocomplete="false">
-				<script id="metamorph-22-start" type="text/x-placeholder"></script><script id="metamorph-22-end" type="text/x-placeholder"></script>
-				<button class="btn btn-lg btn-primary btn-block btn-center" type="submit" data-bindattr-3="3">Sign in</button>
-				<br>
-				<small class="create-account text-muted">Dont have a [your service] or social network account?
-				<a href="/signup" id="ember363" class="ember-view btn btn-sm btn-default"> Sign Up </a> </small>
+	<div class="page">
+		<div class="wrapper">
+			<h1> Sign in</h1>
+			<form method="post" action="/auth/signin">
+				<div class="form-group">
+					<label for="exampleInputEmail1">Email address</label>
+					<input name="email" type="email" class="form-control" id="exampleInputEmail1"
+						aria-describedby="emailHelp" placeholder="Enter email">
+					<small id="emailHelp" class="form-text ">We'll never share your email with anyone
+						else.</small>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputPassword1">Password</label>
+					<input name="password" type="password" class="form-control" id="exampleInputPassword1"
+						placeholder="Password">
+				</div>
+
+				<button type="submit" class="btn btn-lg btn-block btn-success">Login</button>
 			</form>
+			<small>Dont have a account
+				<a href="/signup" id="ember363" class="btn  btn-link "> Sign Up </a>
+			</small>
 		</div>
-		 <div class="foot"> <p style="text-align:center">
-                <h2>© MahmoudAbdelaziz 2018.</h2>
-                <!--Facebook icon-->
-                <a href="https://twitter.com/mhmod_abdelaziz" target="_blank"><img alt="" src="https://s3.amazonaws.com/flashissue/ueBIjxRoTBuYR6XWW1iO_v3qVW5nRUq5VZF9RQXi2_twitter.png" /> </a>&nbsp; &nbsp; &nbsp;
-                <!--Google+ icon-->
-                <a href="https://plus.google.com/u/0/102301396727943133615" target="_blank"><img alt="" src="https://s3.amazonaws.com/flashissue/gHd2XoyiQbKBqljm7bzg_63j3xtd7SX28TTMeOSfZ_google.png" /> </a>&nbsp; &nbsp;&nbsp;
-                <!--Twitter icon-->
-                <a href="https://www.facebook.com/mhmoudabdelazizz" target="_blank"><img alt="" src="https://s3.amazonaws.com/flashissue/MsIJsIsDT9WLAxxH4aIK_OgdHV3vxSR2737LGd8cq_facebook.png" /> </a>&nbsp; &nbsp;&nbsp;
-                
-            </p></div>
-	</body>
+	</div>
+</body>
+
 </html>
+
+
+
+
+
+
