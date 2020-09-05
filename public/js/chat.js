@@ -63,6 +63,7 @@ socket.on('newMessage', function(msg) {
         var html = Mustache.render(templateLeft, message);
     }
     jQuery('.messages').append(html);
+    jQuery('.messages').scrollTop(jQuery('.messages')[0].scrollHeight);
 });
 
 
